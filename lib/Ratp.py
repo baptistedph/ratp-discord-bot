@@ -31,7 +31,3 @@ class Ratp:
       parsed_way = 'A+R'
 
     return self.__fetch(f'/schedules/{type}/{code}/{station}/{parsed_way}')['result']['schedules']
-  
-
-
-

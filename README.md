@@ -2,6 +2,22 @@
 
 Obtenez par de simples commandes les horaires, les stations et le traffic à propos de vos lignes.
 
+### Lancer le bot
+
+#### Windows
+
+```sh
+pip install -r requirements.txt
+python Client.py
+```
+
+#### MacOS
+
+```sh
+pip install -r requirements.txt
+python3 Client.py
+```
+
 ### Commandes
 
 - `!commandes` - Liste toutes les commandes.

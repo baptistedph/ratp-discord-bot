@@ -69,4 +69,15 @@ async def schedules(ctx, type, code, station):
 
   await ctx.reply(embed = embed)
 
+@bot.command()
+  async def help(ctx, type)
+  command =
+  {
+  "!lines":"affiches toutes les lignes",
+  "!lines metros":"affiches toutes les lignes de métro",
+  "!lines rers":"affiches toutes les lignes de rer",
+  "!stations":"!stations suivis du numéro de la ligne donne le noms des stations sur cette ligne "
+  "!traffic ligne + stations":"Donne les informations sur le traffic en temps réel"
+  "!schedule ligne + stations":"heure d'arrivé des prochains trains"
+
 bot.run(token)

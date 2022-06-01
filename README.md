@@ -8,7 +8,7 @@ Obtenez par de simples commandes les horaires, les stations et le traffic à pro
 - `!lignes [metros|rers]` - Liste toutes les lignes de métro ou de RER.
 - `!stations [metros|rers] [<line>]` - Liste toutes les stations d'une ligne.
 - `!traffic [metros|rers] [<line>]` - Donne les informations à propos du traffic d'une ligne.
-- `!prochains [metros|rers] [<line>] [<station>]` - Liste les prochains passages d'un train.
+- `!prochains [metros|rers] [<line>] [<station>] [aller|retour|aller-retour]` - Liste les prochains passages d'un train.
 
 ### Equipe
 

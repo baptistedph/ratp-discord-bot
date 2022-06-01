@@ -59,13 +59,14 @@ async def traffic(ctx, type, code):
   await ctx.reply(embed = embed)
 
 @bot.command()
-async def prochains(ctx, type, code, station):
-  schedules = ratp.get_schedules(type, code, station)
+async def prochains(ctx, type, code, station, way = 'aller-retour'):
+  schedules = ratp.get_schedules(type, code, station, way)
 
   embed = discord.Embed(title = f"Les prochains trains à la station {station} de la ligne {code}", color = 0xffffff)
 
   for schedule in schedules:
     embed.add_field(name = 'Heure', value = schedule['message'])
+    embed.add_field(name = 'ㅤ', value = 'ㅤ')
     embed.add_field(name = 'Destination', value = schedule['destination'])
 
   await ctx.reply(embed = embed)

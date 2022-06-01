@@ -22,7 +22,7 @@ class Ratp:
   def get_traffic(self, type, code):
     return self.__fetch(f'/traffic/{type}/{code}')['result']['message']
   
-  def get_schedules(self, type, code, station, way = 'aller-retour'):
+  def get_schedules(self, type, code, station, way):
     if way == 'aller':
       parsed_way = 'A'
     elif way == 'retour':

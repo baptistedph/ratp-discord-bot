@@ -11,13 +11,14 @@ load_dotenv()
 token = getenv('SECRET_TOKEN')
 
 bot = commands.Bot(command_prefix = '!')
+bot.remove_command('help')
 
 @bot.event
 async def on_ready():
   print('running')
 
 @bot.command()
-async def lines(ctx, type):  
+async def lignes(ctx, type):  
   lines = ratp.get_lines(type)
 
   used_codes = []
@@ -58,7 +59,7 @@ async def traffic(ctx, type, code):
   await ctx.reply(embed = embed)
 
 @bot.command()
-async def schedules(ctx, type, code, station):
+async def prochains(ctx, type, code, station):
   schedules = ratp.get_schedules(type, code, station)
 
   embed = discord.Embed(title = f"Les prochains trains à la station {station} de la ligne {code}", color = 0xffffff)
@@ -70,14 +71,20 @@ async def schedules(ctx, type, code, station):
   await ctx.reply(embed = embed)
 
 @bot.command()
-  async def help(ctx, type)
-  command =
-  {
-  "!lines":"affiches toutes les lignes",
-  "!lines metros":"affiches toutes les lignes de métro",
-  "!lines rers":"affiches toutes les lignes de rer",
-  "!stations":"!stations suivis du numéro de la ligne donne le noms des stations sur cette ligne "
-  "!traffic ligne + stations":"Donne les informations sur le traffic en temps réel"
-  "!schedule ligne + stations":"heure d'arrivé des prochains trains"
+async def commandes(ctx):
+  commands = {
+    "!commandes": "Liste toutes les commandes.",
+    "!lignes [metros|rers]": "Liste toutes les lignes de métro ou de RER.",
+    "!stations [metros|rers] [<line number>]": "Liste toutes les stations d'une ligne",
+    "!traffic [metros|rers] [<line number>]": " Donne les informations à propos du traffic d'une ligne.",
+    "!prochains [metros|rers] [<line number>] [<station name>]": "Liste les prochains passages d'un train.",
+  }
+
+  embed = discord.Embed(title = f"Commandes", color = 0xffffff)
+
+  for command in commands:
+    embed.add_field(name = command, value = commands[command], inline = False)
+
+  await ctx.reply(embed = embed)
 
 bot.run(token)

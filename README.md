@@ -30,3 +30,7 @@ python3 Client.py
 
 - [Baptiste DAUPHOUY](https://github.com/baptistedph)
 - [Théo DUVAL](https://github.com/The0Duval)
+
+### Remerciements
+
+Merci à [Pierre GRIMAUD](https://github.com/pgrimaud) pour son API : https://github.com/pgrimaud/ratp-api-rest
